@@ -3,9 +3,10 @@ using namespace std;
 
 int global = 10;
 
-void function()
+void function(int local)
 {
-    cout << "Global " << global << endl;
+    local = 5-local;
+    cout << "Local " << local << endl;
 }
 
 void function2()
@@ -17,12 +18,12 @@ int main()
 {
     while(global > 0)
     {
-        function();
+        function(global);
         function2();
     }
 
     function2();
-    function();
+    function(global);
 
     return 0;
 }
